@@ -221,10 +221,10 @@ function New-TrapetsScreening {
 
         if ($csvImport.IsSanctioned.Contains("YES"))
         {
-            Send-MailMessage -From "Trapets Screening <screening@domain.se>" -To "$($settings.ReportTo)", "christopher@waylight.se" -Subject "Trapets Screening - $(Get-Date -Format("yyyy-MM-dd"))" -Body "Hi $($settings.ReportName), <br><br>Attached you will find the daily screening report. <b>This report contains matches.</b><br><br>This report has been saved to: Domain AM - General\AML\Portfolio Sanctions Screening" -BodyAsHtml -Attachments $filePathAndName -SmtpServer "smtp.office365.com" -Credential $smtpCredentials -UseSsL
+            Send-MailMessage -From "Trapets Screening <screening@domain.se>" -To "$($settings.ReportTo)", "<email>" -Subject "Trapets Screening - $(Get-Date -Format("yyyy-MM-dd"))" -Body "Hi $($settings.ReportName), <br><br>Attached you will find the daily screening report. <b>This report contains matches.</b><br><br>This report has been saved to: Domain AM - General\AML\Portfolio Sanctions Screening" -BodyAsHtml -Attachments $filePathAndName -SmtpServer "smtp.office365.com" -Credential $smtpCredentials -UseSsL
         }
         else {
-            Send-MailMessage -From "Trapets Screening <screening@domain.se>" -To "$($settings.ReportTo)", "christopher@waylight.se" -Subject "Trapets Screening - $(Get-Date -Format("yyyy-MM-dd"))" -Body "Hi $($settings.ReportName), <br><br>Attached you will find the daily screening report. This report contains no matches.<br><br>This report has been saved to: Domain AM - General\AML\Portfolio Sanctions Screening" -BodyAsHtml -Attachments $filePathAndName -SmtpServer "smtp.office365.com" -Credential $smtpCredentials -UseSsL
+            Send-MailMessage -From "Trapets Screening <screening@domain.se>" -To "$($settings.ReportTo)", "<email>" -Subject "Trapets Screening - $(Get-Date -Format("yyyy-MM-dd"))" -Body "Hi $($settings.ReportName), <br><br>Attached you will find the daily screening report. This report contains no matches.<br><br>This report has been saved to: Domain AM - General\AML\Portfolio Sanctions Screening" -BodyAsHtml -Attachments $filePathAndName -SmtpServer "smtp.office365.com" -Credential $smtpCredentials -UseSsL
         }
     }
 
